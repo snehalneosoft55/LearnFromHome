@@ -1,0 +1,37 @@
+.homeWrapper{
+    /* background-color:rgb(218, 80, 144); */
+    background-image: url('../images/skoool-alternatives-elearning-for-children.jpg');
+    
+    height:600px;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* color:red */
+}
+h1{
+    font-size: 100px !important;
+    text-align: center;
+    color:white;
+    text-shadow: 6px 6px 10px black;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+.registration , .login{
+    font-size: 45px;
+    padding:2%;
+    margin-left: 11px;
+}
+.homeWrapperMenuReg,.homeWrapperMenuLogin{
+    margin-left:70%;
+    margin-right: 1%;
+    margin-top:2%;
+    /* border-left:15px solid yellow; */
+    width:10px;
+
+    background:rgb(212, 12, 95);
+    transition: width 0.5s;
+}
+.homeWrapperMenuReg:hover , .homeWrapperMenuLogin:hover{
+    width: 300px;
+}
+

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 import '../assets/css/Home.css'
 // import NavBars from './NavBar'
 import { Container , Row, Col } from 'react-bootstrap'
@@ -12,14 +12,16 @@ export default class Home extends React.Component{
             
                 <section className="homeSection">
                     <div className="homeWrapper"> 
-                        <h1>Learn From Home</h1>
+                        <h1 className=" title ">Learn From Home</h1>
                         <div className="homeWrapperMenu">
                             <div className="homeWrapperMenuReg">
-                               
-                                <h2 className="registration" >Rgistration</h2>
+                               <Link to="/Registration" style={{textDecoration:'none'}}><h2 className="registration" >Registration</h2></Link>
+                                
                             </div>
                             <div className="homeWrapperMenuLogin">
-                                <h2 className="login"> LogIn </h2>
+                            <Link to="/LogIn" style={{textDecoration:'none'}}><h2 className="registration" >LogIn</h2></Link>
+
+                                {/* <h2 className="login"> LogIn </h2> */}
                             </div>
                         </div>
                     </div>

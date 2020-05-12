@@ -9,7 +9,7 @@ import assets from '../assets/constants/images'
 export default class Home extends React.Component{
     render(){
         return(
-            
+            <div>
                 <section className="homeSection">
                     <div className="homeWrapper"> 
                         <h1 className=" title ">Learn From Home</h1>
@@ -23,9 +23,18 @@ export default class Home extends React.Component{
 
                                 {/* <h2 className="login"> LogIn </h2> */}
                             </div>
+                            
                         </div>
+                        
                     </div>
                 </section>
+                <section className="footer">
+                    <div classname="footerWrapper">
+                        <p className="footerTagLine">Teaching in the Internet age means we must teach tomorrow’s skills today.</p>
+                    </div>
+                </section>
+            </div>
+                
             
         )
     }

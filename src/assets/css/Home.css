@@ -21,20 +21,40 @@
     font-size: 45px;
     margin-left: 11px;
     color:black;
+   
     
+}
+.homeWrapperMenu{
+    margin-top:10%;
 }
 .homeWrapperMenuReg,.homeWrapperMenuLogin{
     /* width:40px; */
     height:50px;
     margin-left:70%;
     margin-right: 1%;
-    margin-top:2%;
+    margin-top:3%;
     width:10px;
     
     background:rgb(212, 12, 95);
     transition: width 0.5s;
+    /* transition: margin-left 5s */
 }
 .homeWrapperMenuReg:hover , .homeWrapperMenuLogin:hover{
     width: 300px;
+    /* margin-left:440px; */
+}
+.footerTagLine{
+    margin-top:1%;
+    /* background: black; */
+    /* color:white; */
+    font-size: 20px;
+    text-shadow: 2px 2px 4px red;
+    position: relative;
+    animation: moving 10s infinite;
+    animation-timing-function: linear
+}
+@keyframes moving{
+    from{left:0px;}
+    to{left:1000px}
 }
 

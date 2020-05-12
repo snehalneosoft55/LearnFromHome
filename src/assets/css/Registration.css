@@ -1,0 +1,13 @@
+.regWrapper h1{
+    font-size: 80px;
+    color:pink;
+    text-align: center;
+    text-shadow: 2px 2px 2px red;
+}
+.regWrapperCard{
+    width:800px
+}
+.regWrapperCard{
+    box-shadow: 2px 2px 2px rgb(136, 124, 124);
+    margin-left:250px;
+}

@@ -8,7 +8,61 @@ import Inputs from '../components/Inputs'
 
 
 export default class Registration extends React.Component{
-    render(){
+    constructor(props){
+        super(props);
+        this.state = {
+            userInfo : {
+                firstName : '' ,
+                lastName : '' ,
+                email : '' ,
+                userName : '',
+                password : '' ,
+                confirmPassword : ''
+            },
+            errors:{
+                firstName : '',
+                lastName : '',
+                email : '',
+                userName : '',
+                password : '',
+                confirmPassword : '' 
+            }
+            
+        }
+       
+    }
+
+    handleChange = (event) => {
+        event.preventDefault();
+        const { name , value } = event.target;
+        let userInfo = this.state.userInfo;
+        let errors = this.state.errors;
+        switch(name)
+        {
+            case 'FirstName' : 
+            if(value == '')
+            {
+                errors.firstName = 'required'
+                console.log("in firstname empty val");
+                
+            }
+            else{
+                userInfo.firstName= value
+                console.log("name::", userInfo.firstName);
+            }
+        }
+    }
+    render()
+    {
+        const {errors} = this.state;
+        console.log("err:::",errors.firstName);
+        const years = [];
+        let date = new Date;
+        for(let i=1980 ; i<= date.getFullYear(); i++)
+        {
+            years.push(<option value={i}> {i} </option>)
+        }
+        const month = [];
         return(
             <section className="reg">
                 <div className="regWrapper">
@@ -19,8 +73,10 @@ export default class Registration extends React.Component{
                                 label="First Name"  
                                 name="FirstName" 
                                 type="text" 
-                                placeholder="First Name" 
+                                placeholder="First Name"
+                                handleChange = {this.handleChange}
                             />
+
                            <Inputs 
                                 label="Last Name" 
                                 name="LastName" 
@@ -32,7 +88,7 @@ export default class Registration extends React.Component{
                                 name="EmailId" 
                                 type="email" 
                                 placeholder="Email Id" 
-                            />
+                            /> 
                            <Inputs 
                                 label="Username" 
                                 name="UserName" 
@@ -51,6 +107,14 @@ export default class Registration extends React.Component{
                                 type="password" 
                                 placeholder="Confirm Password" 
                             />
+                            <div>
+                                <select name="Years" className="Years">
+                                    {years}
+                                </select>
+                                <select name="Month" className = "Month">
+                                    <option></option>
+                                </select>
+                            </div>
                         </Form>
                     </Card>
                 </div>

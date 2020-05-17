@@ -1,13 +1,24 @@
+.reg{
+    /* height:110%;
+    margin-bottom: 0.01em; */
+    overflow: auto !important;
+}
 .regWrapper h1{
     font-size: 80px;
-    color:pink;
+    color:rgb(221, 44, 74);
     text-align: center;
-    text-shadow: 2px 2px 2px red;
+    text-shadow: 2px 2px 2px black;
 }
 .regWrapperCard{
-    width:800px
+    width:800px;
+    background: rgb(167, 149, 152);
+    
 }
 .regWrapperCard{
-    box-shadow: 2px 2px 2px rgb(136, 124, 124);
+    box-shadow: 4px 4px px rgb(136, 124, 124);
     margin-left:250px;
+}
+.regWrapper{
+   
+    margin:50px
 }

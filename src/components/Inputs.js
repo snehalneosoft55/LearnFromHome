@@ -15,6 +15,7 @@ export default class Inputs extends React.Component{
                 type={this.props.type}
                 placeholder={this.props.placeholder}
                 autocomplete="off"
+                onChange = {this.props.handleChange}
                 // required
                 />
             </Form.Group>

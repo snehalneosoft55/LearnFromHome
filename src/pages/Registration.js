@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 
 import '../assets/css/Registration.css';
@@ -194,14 +194,16 @@ export default class Registration extends React.Component{
                                 handleChange = {this.handleChange}
                             />
                             <span className="errorSpan">{errors.confirmPassword}</span>
-                            <div>
+                            {/* <div>
                                 <select name="Years" className="Years">
                                     {years}
                                 </select>
                                 <select name="Month" className = "Month">
                                     <option></option>
                                 </select>
-                            </div>
+                            </div> */}
+                            <Button className="submitButton">Submit</Button>
+                            <Button className="loginButton">LogIn</Button>
                         </Form>
                     </Card>
                 </div>

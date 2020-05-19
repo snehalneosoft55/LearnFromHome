@@ -27,3 +27,16 @@
     color:rgb(177, 55, 55);
     margin-left: 80px;
 }
+.submitButton{
+    width:300px;
+    background: rgb(50, 226, 226) !important;
+    color:black;
+    border: white;
+}
+.loginButton{
+    width:300px;
+    background: rgb(50, 226, 226) !important;
+    color:black;
+    border: white;
+    margin-left: 40px;
+}

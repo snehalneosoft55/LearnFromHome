@@ -15,6 +15,9 @@
 .BellowLayerRightPanel{
     padding-top:100px
 }
+.BellowLayerLeftPanel{
+    padding:120px
+}
 .ButtonStudentLogin{
     width:150px;
     height: 50px;
@@ -23,6 +26,16 @@
     /* border-radius: 10%; */
 }
 .ButtonStudentLogin:hover{
+    background: gray;
+    border-style: none;
+}
+.ButtonTeacherLogin{
+    width:150px;
+    height: 50px;
+    background: gray;
+    border-style: none;
+}
+.ButtonTeacherLogin:hover{
     background: gray;
     border-style: none;
 }
@@ -35,7 +48,7 @@
     top: 90px;
     /* left: 260px; */
     box-shadow: 0 0 15px 9px #00000096;
-    transition: left 1s cubic-bezier(0, 0, 1, 1);
+    transition: left 0.3s cubic-bezier(0, 0, 1, 1);
     padding-top:100px;
 
 }
@@ -50,4 +63,7 @@
     background: gray;
     border-style: none;
     margin-left:30px
+}
+.formSubmitButton:hover{
+    background: gray;
 }

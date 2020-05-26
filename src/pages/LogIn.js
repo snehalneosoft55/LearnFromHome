@@ -15,16 +15,27 @@ export default class ClickMe extends React.Component {
       this.state = { 
         style : {
           left : "260px"
-        }
+        },
+        flag:false
        }
     }
     moveAboveLayer = () =>{
       // setOpen(!open);
-      this.setState(prevState => {
-        let style= Object.assign({},prevState.style);
-        style.left = "600px";
-        return {style}
-    })
+      if(this.state.flag){
+        this.setState(prevState => {
+          let style= Object.assign({},prevState.style);
+          style.left = "600px";
+          return {style}
+      })
+      }
+      else{
+        this.setState(prevState => {
+          let style= Object.assign({},prevState.style);
+          style.left = "600px";
+          return {style}
+      })
+      }
+      
     }
     render() {
       // const fade = this.state.fade
@@ -35,26 +46,30 @@ export default class ClickMe extends React.Component {
               <div className="BellowLayer">
                 <Container>
                   <Row>
-                    <Col>
-                    {/* <Fade in={open}>
-        <div id="example-fade-text">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-          terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-          labore wes anderson cred nesciunt sapiente ea proident.
-        </div>
-      </Fade> */}
+                    <Col className="BellowLayerLeftPanel">
+                      <div>
+                        <h1>LOGIN FOR <br/>TEACHERS <br></br>🢡 </h1>
+                        
+                        <Button 
+                          className="ButtonTeacherLogin"
+                          onClick={this.moveAboveLayer}
+                        >
+                          Click Here
+                        </Button>
+                      </div>
+                      
                     </Col>
-                    <Col xs={4}></Col>
+                    <Col xs={2}></Col>
                     <Col>
                       <div className="BellowLayerRightPanel">
-                        <h1>Are you <br/>student?</h1>
-                        <p>Login as a Student</p>
+                        <h1>LOGIN FOR <br/>STUDENTS<br/>🢠</h1>
+                        <p>If No then Click here</p>
                         <Button 
                           className="ButtonStudentLogin" 
                           // aria-controls="example-fade-text" 
                           // aria-expanded={open} 
-                          onClick={this.moveAboveLayer}>
-                        LogIn
+                          onClick={()=>{this.setState({flag:true})},this.moveAboveLayer}>
+                          Click Here
                         </Button>
                       </div>
                     </Col>

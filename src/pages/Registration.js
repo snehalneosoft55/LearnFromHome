@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Card, Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
@@ -6,7 +7,7 @@ import { Form } from 'react-bootstrap';
 import '../assets/css/Registration.css';
 import Inputs from '../components/Inputs';
 import {RegEx} from '../assets/constants/RegEx';
-
+import { bottom } from '@popperjs/core';
 
 export default class Registration extends React.Component{
     constructor(props){
@@ -28,11 +29,8 @@ export default class Registration extends React.Component{
                 password : '',
                 confirmPassword : '' 
             }
-            
         }
-       
     }
-
     handleChange = (event) => {
         event.preventDefault();
         const { name , value } = event.target;
@@ -191,7 +189,15 @@ export default class Registration extends React.Component{
                                 name="ConfirmPassword" 
                                 type="password" 
                                 placeholder="Confirm Password" 
+                                style={{marginBottom : '50px'}}
                                 handleChange = {this.handleChange}
+                            />
+                            <span className="errorSpan">{errors.confirmPassword}</span>
+                            <Inputs
+                                label="Phone No"
+                                name="PhoneNo"
+                                type="number"
+                                placeholder="Phone No"
                             />
                             <span className="errorSpan">{errors.confirmPassword}</span>
                             {/* <div>
@@ -202,8 +208,10 @@ export default class Registration extends React.Component{
                                     <option></option>
                                 </select>
                             </div> */}
+                            <div>
                             <Button className="submitButton">Submit</Button>
-                            <Button className="loginButton">LogIn</Button>
+                            <Link to='/LogIn'><Button className="loginButton">LogIn</Button> </Link>
+                            </div>
                         </Form>
                     </Card>
                 </div>

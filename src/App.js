@@ -15,7 +15,6 @@ function App() {
         <Route path='/' exact component={ Home } />
         <Route path='/Registration' component={ Registration }/>
         <Route path='/LogIn' component={ LogIn } />
-        
       </Router>
       
     </div>

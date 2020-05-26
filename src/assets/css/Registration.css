@@ -5,6 +5,7 @@
     overflow: auto !important;
 }
 .regWrapper h1{
+    padding-bottom: 30px;
     font-size: 80px;
     color:black;
     text-align: center;
@@ -14,6 +15,10 @@
     width:800px;
     background: rgb(167, 149, 152);
     
+    
+}
+.regWrapperForm{
+    margin-bottom: 50px;
 }
 .regWrapperCard{
     box-shadow: 4px 4px 8px rgb(136, 124, 124);
@@ -24,19 +29,33 @@
     margin:50px
 }
 .errorSpan{
+    padding-left: 136px;
     color:rgb(177, 55, 55);
     margin-left: 80px;
 }
 .submitButton{
     width:300px;
-    background: rgb(50, 226, 226) !important;
+    margin-left: 92px;
+    /* background: rgba(0, 0, 0, 0.329) !important; */
+    background: rgb(219, 74, 98);
     color:black;
     border: white;
+    border:none !important
 }
 .loginButton{
     width:300px;
-    background: rgb(50, 226, 226) !important;
+    /* background: rgba(0, 0, 0, 0.329) !important; */
+    background: rgb(219, 74, 98);
+
     color:black;
     border: white;
-    margin-left: 40px;
+    margin-left: 10px;
+}
+.loginButton:hover,.submitButton:hover{
+    background: rgb(211, 68, 68);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

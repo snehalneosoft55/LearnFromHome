@@ -7,6 +7,7 @@ import './App.css';
 import Home from './pages/Home';
 import Registration from './pages/Registration';
 import LogIn from './pages/LogIn';
+import ForgotPassword from './pages/forgotPassword';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' exact component={ Home } />
         <Route path='/Registration' component={ Registration }/>
         <Route path='/LogIn' component={ LogIn } />
+        <Route path="/ForgotPassword" component={ ForgotPassword }/>
       </Router>
       
     </div>

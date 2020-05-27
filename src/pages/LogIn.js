@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState,setOpen} from 'react';
-
+import { Link } from 'react-router-dom'
 
 
 import '../assets/css/Login.css'
@@ -38,8 +38,6 @@ export default class ClickMe extends React.Component {
       
     }
     render() {
-      // const fade = this.state.fade
-      
       return (
           <section className="Login">
             <div className="LoginWrapeer">
@@ -92,6 +90,7 @@ export default class ClickMe extends React.Component {
                       placeholder="Password"
                     ></FormControl>
                   </FormGroup>
+                  <Link className="ForgotPasswordLink" to="/ForgotPassword">Forgot Password</Link>
                   <Button className="formSubmitButton">Submit</Button>
                 </Form>
               </div>

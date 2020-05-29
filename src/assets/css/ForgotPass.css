@@ -1,0 +1,27 @@
+.ForgotPass{
+    background-image: linear-gradient(to right ,red , pink);
+}
+.ForgorPassWrapper{
+    margin-top:150px;
+    margin-left:270px;
+}
+.ForgorPassWrapperCard{
+    width:800px;
+    box-shadow: 0px 0px 15px 5px rgb(221, 216, 216);
+
+}
+.ForgorPassWrapperFormControl{
+    width:700px;
+    
+}
+.ForgorPassWrapperFormControl:hover{
+    /* color:blue */
+    box-shadow: 0px 0px 15px 5px rgb(221, 216, 216);
+
+}
+.ForgorPassWrapperCardTitle{
+    margin-left:250px
+}
+.ForgorPassWrapperLabel, .ForgorPassWrapperFormControl{
+    margin-left: 30px;
+}

@@ -51,6 +51,18 @@
     padding-top:100px;
 
 }
+.AboveRightLayer{
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    height: 550px;
+    width: 450px;
+    top: 90px;
+    /* left: 260px; */
+    box-shadow: 0 0 15px 9px #00000096;
+    transition: left 0.3s cubic-bezier(0, 0, 1, 1);
+    padding-top:100px;
+}
 .AboveLayerFormControl{
    margin-left: 30px;
    width:340px;

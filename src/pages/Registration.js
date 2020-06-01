@@ -7,10 +7,11 @@ import { Form } from 'react-bootstrap';
 import '../assets/css/Registration.css';
 import Inputs from '../components/Inputs';
 import {RegEx} from '../assets/constants/RegEx';
-import { bottom } from '@popperjs/core';
 
-export default class Registration extends React.Component{
-    constructor(props){
+export default class Registration extends React.Component
+{
+    constructor(props)
+    {
         super(props);
         this.state = {
             userInfo : {
@@ -122,6 +123,7 @@ export default class Registration extends React.Component{
                     errors.confirmPassword = '';
                     userInfo.confirmPassword = value;
                 }
+                break;
             default:
                 break;
         }
@@ -130,14 +132,12 @@ export default class Registration extends React.Component{
     render()
     {
         const {errors} = this.state;
-        console.log("err:::",errors.firstName);
         const years = [];
-        let date = new Date;
+        let date = new Date();
         for(let i=1980 ; i<= date.getFullYear(); i++)
         {
             years.push(<option value={i}> {i} </option>)
         }
-        const month = [];
         return(
             <section className="reg">
                 <div className="regWrapper">

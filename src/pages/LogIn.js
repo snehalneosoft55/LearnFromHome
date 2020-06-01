@@ -4,33 +4,36 @@ import { Link } from 'react-router-dom'
 import '../assets/css/Login.css'
 import { Container, Row, Col} from 'react-bootstrap';
 import { Button } from 'react-bootstrap'
-import { Form , FormGroup, FormLabel, FormControl } from 'react-bootstrap'
+import { Form , FormGroup, FormControl } from 'react-bootstrap'
 
-export default class ClickMe extends React.Component {
+export default class Login extends React.Component {
     constructor(props) {
-      super(props)
-      this.state = { 
-        style : {
-          left : "260px"
-        },
-        flag:false
-       }
+        super(props)
+        this.state = 
+        { 
+            style : {
+                        left : "260px"
+                    },
+            flag:false
+        }
     }
-    moveAboveLayer = () =>{
-        this.setState(prevState => {
-          let style= Object.assign({},prevState.style);
-          style.left = "600px";
-          return {style}
-      })
+    moveAboveLayer = () =>
+    {
+        this.setState(prevState => 
+            {
+                let style= Object.assign({},prevState.style);
+                style.left = "600px";
+                return {style}
+            })
     }
-    moveAboveLayer1= () => {
-      {
-        this.setState(prevState => {
-          let style= Object.assign({},prevState.style);
-          style.left = "200px";
-          return {style}
-      })
-      } 
+    moveAboveLayer1= () => 
+    {
+        this.setState(prevState => 
+            {
+                let style= Object.assign({},prevState.style);
+                style.left = "200px";
+                return {style}
+            })
     }
     render() {
       return (

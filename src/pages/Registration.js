@@ -1,14 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Card, Button } from 'react-bootstrap';
-import { Form } from 'react-bootstrap';
+import { Card, Button, Container } from 'react-bootstrap';
+import {Row , Col} from 'react-bootstrap'
 
 import '../assets/css/Registration.css';
 import Inputs from '../components/Inputs';
 import {RegEx} from '../assets/constants/RegEx';
+import {postUserInfo}  from '../actions/RegistrationAction'
+import { connect } from 'react-redux'
 
-export default class Registration extends React.Component
+
+let valid = true;
+let forbutton;
+const validateForm = (users) => {
+    console.log("in validateForm");
+    
+    Object.values(users).forEach(
+        (val) => {
+            if(val===''){valid = false;}
+            else{valid=true;}
+        }  
+    );
+    return valid;
+}
+ class Registration extends React.Component
 {
     constructor(props)
     {
@@ -29,7 +45,9 @@ export default class Registration extends React.Component
                 username : '',
                 password : '',
                 confirmPassword : '' 
-            }
+            },
+            submitError:''
+
         }
     }
     handleChange = (event) => {
@@ -129,6 +147,23 @@ export default class Registration extends React.Component
         }
         this.setState({errors,userInfo})
     }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log("in handle submit");
+        if(validateForm(this.state.userInfo)){
+            forbutton=true;
+            this.setState({submitError:''});
+            this.props.postUserInfo(this.state.userInfo);
+          
+        }
+        else{
+            forbutton=false;
+            this.setState({submitError:"Enter values"});
+            // console.log("Invalid form","forbutton:",forbutton);
+            // alert("enter all fields");
+        }
+    }
     render()
     {
         const {errors} = this.state;
@@ -143,7 +178,7 @@ export default class Registration extends React.Component
                 <div className="regWrapper">
                     <h1> Registration </h1>
                     <Card className="regWrapperCard">
-                        <Form className="regWrapperForm">
+                        <form className="regWrapperForm" onSubmit={this.handleSubmit} action="./LogIn.js">
                            <Inputs 
                                 label="First Name"  
                                 name="FirstName" 
@@ -200,22 +235,38 @@ export default class Registration extends React.Component
                                 placeholder="Phone No"
                             />
                             <span className="errorSpan">{errors.confirmPassword}</span>
-                            {/* <div>
-                                <select name="Years" className="Years">
-                                    {years}
-                                </select>
-                                <select name="Month" className = "Month">
-                                    <option></option>
-                                </select>
-                            </div> */}
+                            
                             <div>
-                            <Button className="submitButton">Submit</Button>
-                            <Link to='/LogIn'><Button className="loginButton">LogIn</Button> </Link>
+                                <Container>
+
+                                <Row>
+                                <Col>
+                                <button  className="submitButton" type="submit">Submit</button>
+                            <span className="errorSpan">{this.state.submitError}</span>
+                                </Col>
+                                <Col>
+                                <Link to='/LogIn'><Button className="loginButton">LogIn</Button> </Link>
+
+                                </Col>
+                            </Row>
+                                </Container>
+                            
                             </div>
-                        </Form>
+                        </form>
                     </Card>
                 </div>
             </section>
         )
     }
 }
+const mapStateToProps = state => ({
+    userData: state.userData
+  });
+
+  const mapDispatchToProps = {
+    postUserInfo
+};
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Registration);
